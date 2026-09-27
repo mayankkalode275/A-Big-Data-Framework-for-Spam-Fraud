@@ -1,0 +1,41 @@
+# Python
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# R / RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Apache Spark & Hadoop Runtime Caches
+spark-warehouse/
+metastore_db/
+*.log
+derby.log
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+service-account*.json

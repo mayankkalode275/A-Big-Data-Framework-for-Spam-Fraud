@@ -1,0 +1,4 @@
+Actual_Label,Pred_Normal,Pred_Spam,Pred_Fraud,Total_Test_Records
+Normal,317,20,1,338
+Spam,52,88,3,143
+Fraud,0,0,74,74

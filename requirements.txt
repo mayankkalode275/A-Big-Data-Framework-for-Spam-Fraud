@@ -1,0 +1,6 @@
+# Big Data Framework for Identifying Spam and Fraudulent Communications
+# Python Dependencies for Semester 7 Mumbai University Project
+
+pyspark>=3.2.0
+pandas>=1.3.0
+numpy>=1.20.0

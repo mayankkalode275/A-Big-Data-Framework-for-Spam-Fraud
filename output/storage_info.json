@@ -1,0 +1,6 @@
+{
+  "is_hdfs_active": true,
+  "storage_mode": "HDFS Distributed Storage Mode (hdfs://localhost:9000/HadoopProject)",
+  "processing_engine": "Apache Spark 3.5 (PySpark)",
+  "input_source": "hdfs://localhost:9000/HadoopProject/input/sample_communications.csv"
+}
