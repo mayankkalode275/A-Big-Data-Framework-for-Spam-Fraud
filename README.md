@@ -337,3 +337,34 @@ Running the pipeline generates CSV and JSON artifacts in the `output/` directory
 ## Academic Context
 
 Developed as a Semester 7 Computer Engineering Big Data course project demonstrating distributed storage (Hadoop HDFS), distributed compute (Apache Spark PySpark), machine learning (Spark MLlib), and interactive web visualization (R Shiny).
+
+---
+
+## Deployment Architecture
+
+The framework supports a decoupled deployment model distinguishing between local development compute and public cloud hosting:
+
+### Local Development Environment
+- **Hadoop HDFS**: Manages distributed block storage (`hdfs://localhost:9000/HadoopProject/input/`) locally during batch ingestion.
+- **Apache Spark / PySpark**: Executes distributed DataFrame cleaning, feature extraction, and Spark MLlib model training (`python run_pipeline.py`).
+- **Summary Generation**: Exports processed results to the `output/` directory.
+
+### Public Cloud Deployment Model
+- **R Shiny Dashboard**: Can be deployed to cloud hosting platforms such as **shinyapps.io**, **POSIT Connect**, **Hugging Face Spaces**, or containerized with **Docker**.
+- **Path Resolution**: `r_dashboard/global.R` features deployment-safe multi-path resolution (`c("output", "../output", "r_dashboard/output", "./output")`), enabling the UI to start independently on any cloud host.
+- **Message Communication Detection Engine**: Executes `extract_message_features()` in native R, ensuring full real-time message detection, indicator extraction, and decision tracing without requiring a Java, Hadoop, or Spark installation on the cloud host.
+
+---
+
+## Deployment Checklist
+
+- [x] **Shiny Entry Point Verified**: Validated `r_dashboard/app.R` and `run_r_dashboard.R`.
+- [x] **Required R Packages Identified**: `shiny`, `shinydashboard`, `ggplot2`, `dplyr`, `readr`, `DT`, `scales`.
+- [x] **Required Data Files Packaged**: Output CSV/JSON summaries bundled in `output/` and `r_dashboard/output/`.
+- [x] **Local Windows Paths Removed from Runtime**: Dashboard runtime uses deployment-safe relative path fallback in `global.R`.
+- [x] **Local Hadoop Runtime Excluded**: Local Hadoop/Spark logs and cache directories excluded via `.gitignore`.
+- [x] **Secrets & Credentials Excluded**: Verified no API keys, private tokens, or credentials exist.
+- [x] **Dashboard Starts Independently**: Decoupled R Shiny architecture runs without local Hadoop daemon requirements.
+- [x] **Detection Dependency Verified**: `extract_message_features()` engine runs 100% in R without external cloud dependencies.
+- [x] **GitHub Repository Ready**: Configured for `https://github.com/mayankkalode275/A-Big-Data-Framework-for-Spam-Fraud`.
+- [ ] **Cloud Deployment Ready**: Ready for one-click deployment via `rsconnect::deployApp("r_dashboard")` or Docker containerization.

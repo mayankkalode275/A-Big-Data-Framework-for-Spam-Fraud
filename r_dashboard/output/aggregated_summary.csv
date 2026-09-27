@@ -1,0 +1,2 @@
+Metric,Value
+"['Total Communications', 'Normal Count', 'Spam Count', 'Fraud Count', 'Spam Percentage', 'Fraud Percentage', 'Messages with URLs', 'Avg Message Length', 'Storage Mode']","[3000, 0, 2450, 550, '81.67%', '18.33%', 1131, 87.55, 'HDFS Distributed Storage Mode (hdfs://localhost:9000/HadoopProject)']"

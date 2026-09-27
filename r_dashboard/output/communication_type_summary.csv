@@ -1,0 +1,9 @@
+communication_type,rule_pred_label,record_count,avg_length,url_count
+Email,Fraud,146,118.6,146
+Email,Spam,607,80.7,138
+SMS,Fraud,121,118.5,121
+SMS,Spam,604,81.5,144
+VoIP,Fraud,157,115.7,157
+VoIP,Spam,637,81.2,154
+WhatsApp,Fraud,126,114.7,126
+WhatsApp,Spam,602,80.5,145

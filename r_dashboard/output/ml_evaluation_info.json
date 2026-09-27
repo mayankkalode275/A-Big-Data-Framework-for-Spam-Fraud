@@ -1,0 +1,10 @@
+{
+  "evaluation_method": "80/20 Train-Test Split",
+  "test_records": 555,
+  "train_records": 2445,
+  "total_records": 3000,
+  "random_seed": 42,
+  "model_name": "Spark MLlib Logistic Regression",
+  "evaluator": "MulticlassClassificationEvaluator",
+  "evaluation_note": "Evaluated strictly on 20% held-out test split. Feature overlap in realistic dataset introduces natural classification variance."
+}

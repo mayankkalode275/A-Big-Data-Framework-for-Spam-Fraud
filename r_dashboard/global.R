@@ -24,10 +24,14 @@ suppressPackageStartupMessages({
   library(scales)
 })
 
-# Path to Spark Output Directory
-OUTPUT_DIR <- "../output"
-if (!dir.exists(OUTPUT_DIR)) {
-  OUTPUT_DIR <- "output"
+# Deployment-Safe Path Resolution for Output Summaries
+possible_dirs <- c("output", "../output", "r_dashboard/output", "./output", ".")
+OUTPUT_DIR <- "output"
+for (d in possible_dirs) {
+  if (dir.exists(d) && file.exists(file.path(d, "processed_communications.csv"))) {
+    OUTPUT_DIR <- d
+    break
+  }
 }
 
 # Data Loader Helper Functions
