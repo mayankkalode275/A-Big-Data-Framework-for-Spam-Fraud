@@ -7,6 +7,7 @@ A distributed Big Data framework for processing, analyzing, and detecting spam a
 ## Table of Contents
 
 - [Overview](#overview)
+- [Live Demo](#live-demo)
 - [Problem Statement](#problem-statement)
 - [Objectives](#objectives)
 - [Technologies Used](#technologies-used)
@@ -32,6 +33,16 @@ A distributed Big Data framework for processing, analyzing, and detecting spam a
 Modern communication channels are subject to high volumes of unsolicited spam and high-risk fraudulent attacks (e.g., bank phishing, OTP theft, lottery scams, legal threats). Traditional centralized security systems struggle to handle the high volume, velocity, and variety of multi-channel message streams. 
 
 This project demonstrates an end-to-end Big Data pipeline designed to ingest, sanitize, analyze, and classify communications into **NORMAL**, **SPAM**, or **FRAUD**. It integrates distributed block storage (Hadoop HDFS), in-memory distributed data processing (Apache Spark PySpark), machine learning classification (Spark MLlib), and a web dashboard with live message detection (R Shiny).
+
+---
+
+## Live Demo
+
+🚀 **Live Deployed Web Application**: [https://mayankkalode.shinyapps.io/big-data-spam-fraud-detection/](https://mayankkalode.shinyapps.io/big-data-spam-fraud-detection/)
+
+The interactive R Shiny dashboard is deployed live on **shinyapps.io**, providing full access to dataset visualizations, model metrics, confusion matrices, data tables, and live real-time message detection.
+
+> **Note on Architecture**: The public cloud dashboard runs in a decoupled deployment model. Local batch ingestion and model training utilize Hadoop HDFS and PySpark, while the live dashboard and real-time message detection engine run natively in R on shinyapps.io. No shinyapps.io account tokens or secret credentials are stored in this repository.
 
 ---
 
@@ -367,4 +378,4 @@ The framework supports a decoupled deployment model distinguishing between local
 - [x] **Dashboard Starts Independently**: Decoupled R Shiny architecture runs without local Hadoop daemon requirements.
 - [x] **Detection Dependency Verified**: `extract_message_features()` engine runs 100% in R without external cloud dependencies.
 - [x] **GitHub Repository Ready**: Configured for `https://github.com/mayankkalode275/A-Big-Data-Framework-for-Spam-Fraud`.
-- [ ] **Cloud Deployment Ready**: Ready for one-click deployment via `rsconnect::deployApp("r_dashboard")` or Docker containerization.
+- [x] **Cloud Deployment Live**: Successfully deployed on shinyapps.io at [https://mayankkalode.shinyapps.io/big-data-spam-fraud-detection/](https://mayankkalode.shinyapps.io/big-data-spam-fraud-detection/).
